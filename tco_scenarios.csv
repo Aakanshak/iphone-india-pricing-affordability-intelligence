@@ -1,0 +1,6 @@
+﻿device,scenario,ownership_years,resale_rate,financing_rate,repair_cost_inr,net_cost_inr,annual_cost_inr,monthly_cost_inr
+iPhone 17,2-year hold,2,0.55,0,0,44955,22477.5,1873.125
+iPhone 17,3-year hold,3,0.4,0,0,59940,19980,1665
+iPhone 17,4-year hold,4,0.3,0,0,69930,17482.5,1456.875
+iPhone 17,5-year hold,5,0.22,0,0,77922,15584.4,1298.7
+iPhone 17,3-year + 8% financing + ₹10k repairs,3,0.4,0.08,10000,77932,25977.3333333333,2164.7777777778

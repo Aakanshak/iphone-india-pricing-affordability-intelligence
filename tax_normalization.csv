@@ -1,0 +1,14 @@
+﻿country,listed_price_usd,standard_tax_rate,tax_treatment,implied_pre_tax_usd,pre_tax_premium_vs_us,evidence_type,normalization_status,caveat
+United States,929,0,Sales tax excluded from Apple listed price,929,0,REPORTED,BENCHMARK,No single national retail sales-tax rate
+India,1046.7177500462276,0.18,GST included,887.048940717142,-0.045157222048286316,REPORTED,NORMALIZED,Tax bridge only; not a full cost decomposition
+China,1013.8277792041079,0.13,Standard VAT used directionally,897.1927249593875,-0.03423818626546016,REPORTED RATE,NORMALIZED*,Confirm exact Apple retail tax treatment before publication
+Japan,1036.4826623485399,0.1,Consumption tax used directionally,942.2569657713998,0.014270146147900675,REPORTED RATE,NORMALIZED*,Confirm exact Apple retail tax treatment before publication
+United Arab Emirates,1034.4452008168823,0.05,VAT used directionally,985.1859055398879,0.06047998443475566,REPORTED RATE,NORMALIZED*,Confirm exact Apple retail tax treatment before publication
+Singapore,1144.149547957311,0.09,GST-inclusive consumer pricing,1049.6784843645053,0.12990149016631358,REPORTED RATE,NORMALIZED,Standard GST treatment
+United Kingdom,1215.478554385148,0.2,VAT-inclusive consumer pricing,1012.8987953209568,0.09031086686862944,REPORTED RATE,NORMALIZED,Standard VAT treatment
+Germany,1276.5984,0.19,VAT-inclusive consumer pricing,1072.7717647058826,0.15475970366618141,REPORTED RATE,NORMALIZED,Standard VAT treatment
+Türkiye,2062.054662036938,0.2,VAT used directionally,1718.378885030782,0.8497081647263529,REPORTED RATE,NORMALIZED*,Other device-specific taxes can be material
+Canada,940.1946538725155,,Provincial/federal sales taxes vary,,,REPORTED STRUCTURE,NOT NORMALIZED,No single national consumer tax rate
+Brazil,1619.4258836177933,,Multi-layer indirect tax system,,,COMPLEX,NOT NORMALIZED,Do not oversimplify with one VAT rate
+Australia,1112.9575060308034,,Pending source verification,,,PENDING,NOT NORMALIZED,Held out until source/treatment verified
+Hong Kong,994.6223115180659,,No normalization applied,,,PENDING,NOT NORMALIZED,Keep nominal comparison only

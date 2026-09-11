@@ -1,0 +1,5 @@
+﻿country,iphone_price_usd,household_consumption_ppp_per_capita,reference_year,annual_consumption_burden,consumption_equivalent_months,affordability_rank,evidence_type,source,caveat
+India,1046.7177500462276,7034,2024,0.14880832386213075,1.785699886345569,1,CALCULATED,World Bank WDI,Consumer-spending PPP proxy; not salary or personal income
+China,1013.8277792041079,10759,2024,0.09423067006265526,1.130768040751863,2,CALCULATED,World Bank WDI,Consumer-spending PPP proxy; not salary or personal income
+Singapore,1144.149547957311,36838,2024,0.031058948584540717,0.3727073830144886,3,CALCULATED,World Bank WDI,Consumer-spending PPP proxy; not salary or personal income
+United States,929,58314,2024,0.01593099427238742,0.191171931268649,4,CALCULATED,World Bank WDI,US Apple listed price excludes state/local sales tax

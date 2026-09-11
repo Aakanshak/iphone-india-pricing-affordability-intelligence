@@ -1,0 +1,11 @@
+﻿source_id,topic,publisher,url,snapshot_or_period
+S01,India current iPhone 17 price,Apple India,https://www.apple.com/in/shop/buy-iphone/iphone-17/6.3%22-display-256gb-white,2026-09-11
+S02,US current iPhone 17 price,Apple US,https://www.apple.com/us/shop/buy-iphone/iphone-17,2026-09-11
+S14,ECB FX reference rates,European Central Bank,https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html,2026-09-10
+S16,India GST-inclusive Apple pricing,Apple India,https://www.apple.com/in/shop/help/payments,2026-09-11
+S18,India iPhone production/export/value-addition,Business Standard,https://www.business-standard.com/amp/companies/news/apple-may-soon-become-forex-positive-on-india-iphone-production-126061801389_1.html,2026-06-18
+S21,Household consumption PPP per capita,World Bank WDI,https://data.worldbank.org/indicator/NE.CON.PCAP.PP.CD,2024 core sample
+S29,FY23 iPhone production >$7B,Reuters syndication / Indian Express,https://indianexpress.com/article/technology/tech-news-technology/apple-iphone-production-india-7-billion-8554152/,2023
+S30,FY24 production ~$14B,Business Standard,https://www.business-standard.com/companies/news/apple-assembles-14-bn-worth-of-iphones-in-india-124041100123_1.html,2024
+S31,FY25 production ~$22B,Business Standard,https://www.business-standard.com/companies/news/apple-iphone-production-india-fy25-22-billion-125041300245_1.html,2025
+S39,Galaxy S26 256GB India launch price,Samsung Newsroom India,https://news.samsung.com/in/samsung-india-launches-its-most-advanced-ai-phone-the-galaxy-s26-series-pre-order-now-for-exciting-offers,2026-02-26

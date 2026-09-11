@@ -1,0 +1,183 @@
+// ============================================================
+// MADE IN INDIA. PRICED FOR INDIA? — Power BI Measures
+// Keep table/column names exactly as imported from the CSV pack.
+// ============================================================
+
+// ---------- PAGE 1: PRICING ----------
+Listed Price USD :=
+SUM ( country_prices[usd_equivalent] )
+
+India Listed Price USD :=
+CALCULATE (
+    [Listed Price USD],
+    country_prices[country] = "India"
+)
+
+US Listed Price USD :=
+CALCULATE (
+    [Listed Price USD],
+    country_prices[country] = "United States"
+)
+
+India Premium vs US :=
+DIVIDE ( [India Listed Price USD], [US Listed Price USD] ) - 1
+
+Selected Market Count :=
+DISTINCTCOUNT ( country_prices[country] )
+
+India Nominal Rank :=
+CALCULATE (
+    MAX ( country_prices[nominal_price_rank] ),
+    country_prices[country] = "India"
+)
+
+// ---------- PAGE 2: AFFORDABILITY ----------
+Consumer Burden :=
+DIVIDE (
+    SUM ( consumer_affordability[iphone_price_usd] ),
+    SUM ( consumer_affordability[household_consumption_ppp_per_capita] )
+)
+
+Consumer Equivalent Months :=
+[Consumer Burden] * 12
+
+India Consumer Burden :=
+CALCULATE (
+    [Consumer Burden],
+    consumer_affordability[country] = "India"
+)
+
+US Consumer Burden :=
+CALCULATE (
+    [Consumer Burden],
+    consumer_affordability[country] = "United States"
+)
+
+India vs US Burden Multiple :=
+DIVIDE ( [India Consumer Burden], [US Consumer Burden] )
+
+India Consumer Months :=
+CALCULATE (
+    [Consumer Equivalent Months],
+    consumer_affordability[country] = "India"
+)
+
+US Consumer Months :=
+CALCULATE (
+    [Consumer Equivalent Months],
+    consumer_affordability[country] = "United States"
+)
+
+// ---------- PAGE 3: MANUFACTURING ----------
+FY26 Production USD Bn :=
+CALCULATE (
+    SUM ( india_manufacturing[value] ),
+    india_manufacturing[metric] = "iPhone production value",
+    india_manufacturing[period] = "FY26"
+)
+
+FY26 Export USD Bn :=
+CALCULATE (
+    SUM ( india_manufacturing[value] ),
+    india_manufacturing[metric] = "iPhone export value",
+    india_manufacturing[period] = "FY26"
+)
+
+FY26 Export Share :=
+CALCULATE (
+    SUM ( india_manufacturing[value] ),
+    india_manufacturing[metric] = "Export share of India iPhone production",
+    india_manufacturing[period] = "FY26"
+)
+
+Apple India Value Add Avg :=
+CALCULATE (
+    SUM ( india_manufacturing[value] ),
+    india_manufacturing[metric] = "Apple iPhone India value-addition (average)",
+    india_manufacturing[period] = "FY26"
+)
+
+Production Growth Multiple FY23-FY26 :=
+VAR FY23 =
+    CALCULATE (
+        SUM ( india_production_timeline[production_usd_bn] ),
+        india_production_timeline[fiscal_year] = "FY23"
+    )
+VAR FY26 =
+    CALCULATE (
+        SUM ( india_production_timeline[production_usd_bn] ),
+        india_production_timeline[fiscal_year] = "FY26"
+    )
+RETURN
+    DIVIDE ( FY26, FY23 )
+
+// ---------- TAX BRIDGE ----------
+India Implied PreTax USD :=
+CALCULATE (
+    SUM ( tax_normalization[implied_pre_tax_usd] ),
+    tax_normalization[country] = "India"
+)
+
+India TaxNormalized Premium vs US :=
+DIVIDE ( [India Implied PreTax USD], [US Listed Price USD] ) - 1
+
+// ---------- PAGE 4: TCO ----------
+Purchase Price INR :=
+SUM ( device_tco_baseline[india_price_inr] )
+
+Net Ownership Cost INR :=
+SUM ( device_tco_baseline[net_ownership_cost_inr] )
+
+Annual TCO INR :=
+SUM ( device_tco_baseline[annual_cost_inr] )
+
+Monthly TCO INR :=
+SUM ( device_tco_baseline[monthly_cost_inr] )
+
+iPhone Purchase Price INR :=
+CALCULATE (
+    [Purchase Price INR],
+    device_tco_baseline[device] = "Apple iPhone 17"
+)
+
+Galaxy Purchase Price INR :=
+CALCULATE (
+    [Purchase Price INR],
+    device_tco_baseline[device] = "Samsung Galaxy S26"
+)
+
+Upfront Price Gap INR :=
+[iPhone Purchase Price INR] - [Galaxy Purchase Price INR]
+
+iPhone Monthly TCO INR :=
+CALCULATE (
+    [Monthly TCO INR],
+    device_tco_baseline[device] = "Apple iPhone 17"
+)
+
+Galaxy Monthly TCO INR :=
+CALCULATE (
+    [Monthly TCO INR],
+    device_tco_baseline[device] = "Samsung Galaxy S26"
+)
+
+Monthly TCO Gap INR :=
+[iPhone Monthly TCO INR] - [Galaxy Monthly TCO INR]
+
+// If Galaxy resale is fixed at 40% and both are held 3 years,
+// this is the iPhone resale % required to equal Galaxy monthly TCO.
+iPhone BreakEven Resale Rate :=
+VAR GalaxyMonthly =
+    [Galaxy Monthly TCO INR]
+VAR iPhonePrice =
+    [iPhone Purchase Price INR]
+RETURN
+    1 - DIVIDE ( GalaxyMonthly * 3 * 12, iPhonePrice )
+
+// ---------- EVIDENCE / LABEL HELPERS ----------
+Evidence Label :=
+SELECTEDVALUE ( country_prices[evidence_type], "Mixed evidence" )
+
+Snapshot Date Label :=
+"Price snapshot: " &
+FORMAT ( MAX ( country_prices[snapshot_date] ), "dd mmm yyyy" )
