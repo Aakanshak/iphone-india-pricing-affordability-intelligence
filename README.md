@@ -123,22 +123,20 @@ I intentionally use **sensitivity analysis** instead of claiming an unsupported 
 
 ---
 
-## Dashboard
+## 📊 Interactive Dashboard
 
-The dashboard follows the same analytical journey:
+Explore the complete analysis through the interactive dashboard:
 
-1. **Pricing Paradox**
-2. **Affordability**
-3. **Made in India**
-4. **Ownership Economics**
+### [▶ View Live Dashboard](https://aakanshak.github.io/iphone-india-pricing-affordability-intelligence/dashboard.html)
 
-A browser-based interactive prototype is included at:
+The dashboard follows four analytical layers:
 
-[`dashboard/dashboard.html`](dashboard/dashboard.html)
+1. **Pricing Paradox** — How does India's iPhone price compare globally?
+2. **Affordability** — How expensive is an iPhone relative to consumer purchasing power?
+3. **Made in India** — Has manufacturing growth translated into lower consumer prices?
+4. **Ownership Economics** — How does total cost of ownership compare with a flagship Android alternative?
 
-The Power BI-ready input tables and DAX measures are included in this repository.
-
----
+> **Key takeaway:** “Made in India” and “affordable in India” are two different questions.
 
 ## Repository structure
 
