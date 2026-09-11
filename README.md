@@ -125,9 +125,11 @@ I intentionally use **sensitivity analysis** instead of claiming an unsupported 
 
 ## 📊 Interactive Dashboard
 
-Explore the complete analysis through the interactive dashboard:
+Explore the complete analysis through the interactive dashboard:                                                                                                  
 
-### [▶ View Live Dashboard](https://aakanshak.github.io/iphone-india-pricing-affordability-intelligence/dashboard.html)
+### [▶ View Live Dashboard](https://aakanshak.github.io/iphone-india-pricing-affordability-intelligence/dashboard.html) 
+
+[![Dashboard Preview](Screenshot%202026-09-11%20170036.png)](https://aakanshak.github.io/iphone-india-pricing-affordability-intelligence/dashboard.html)
 
 The dashboard follows four analytical layers:
 
